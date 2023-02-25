@@ -1,7 +1,11 @@
-package com.scheronlini.DIOPadroesdeProjetos.model;
+package com.scheronlini.DIOPadroesdeProjetos.model.entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Cliente {
@@ -11,10 +15,12 @@ public class Cliente {
     private String nome;
     @ManyToOne
     private Endereco endereco;
+    @OneToMany(mappedBy = "cliente")
+    @JsonIgnore
+    private Set<Pedido> pedidos = new HashSet<>();
 
     public Cliente() {
     }
-
     public Cliente(Long id, String nome, Endereco endereco) {
         this.id = id;
         this.nome = nome;
@@ -43,6 +49,14 @@ public class Cliente {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    public Set<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(Set<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
 
     @Override

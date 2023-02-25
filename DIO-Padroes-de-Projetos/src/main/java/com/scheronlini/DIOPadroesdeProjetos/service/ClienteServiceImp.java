@@ -1,9 +1,9 @@
 package com.scheronlini.DIOPadroesdeProjetos.service;
 
-import com.scheronlini.DIOPadroesdeProjetos.model.Cliente;
-import com.scheronlini.DIOPadroesdeProjetos.model.ClienteRepository;
-import com.scheronlini.DIOPadroesdeProjetos.model.Endereco;
-import com.scheronlini.DIOPadroesdeProjetos.model.EnderecoRepository;
+import com.scheronlini.DIOPadroesdeProjetos.model.entity.Cliente;
+import com.scheronlini.DIOPadroesdeProjetos.model.repository.ClienteRepository;
+import com.scheronlini.DIOPadroesdeProjetos.model.entity.Endereco;
+import com.scheronlini.DIOPadroesdeProjetos.model.repository.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

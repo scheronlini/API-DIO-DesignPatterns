@@ -1,6 +1,6 @@
 package com.scheronlini.DIOPadroesdeProjetos.service;
 
-import com.scheronlini.DIOPadroesdeProjetos.model.Cliente;
+import com.scheronlini.DIOPadroesdeProjetos.model.entity.Cliente;
 
 public interface ClienteService {
 

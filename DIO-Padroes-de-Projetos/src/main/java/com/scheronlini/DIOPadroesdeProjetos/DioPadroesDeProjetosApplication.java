@@ -11,5 +11,4 @@ public class DioPadroesDeProjetosApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DioPadroesDeProjetosApplication.class, args);
 	}
-
 }

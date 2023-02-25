@@ -1,6 +1,6 @@
 package com.scheronlini.DIOPadroesdeProjetos.controller;
 
-import com.scheronlini.DIOPadroesdeProjetos.model.Cliente;
+import com.scheronlini.DIOPadroesdeProjetos.model.entity.Cliente;
 import com.scheronlini.DIOPadroesdeProjetos.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
