@@ -8,6 +8,7 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+
 @Entity
 public class Pedido {
     @Id
@@ -18,12 +19,12 @@ public class Pedido {
     private Cliente cliente;
     @OneToMany(mappedBy = "pedido")
     private Set<ItemPedido> itemPedido = new HashSet<>();
-    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'",timezone = "GMT")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant data;
-
 
     public Pedido() {
     }
+
     public Pedido(Long id, Cliente cliente) {
         this.id = id;
         this.cliente = cliente;
@@ -67,14 +68,16 @@ public class Pedido {
         for (ItemPedido itens : itemPedido) {
             if (itens.getProduto().getLocalizacaoEstoque().equalsIgnoreCase(cliente.getEndereco().getUf())) {
                 frete = 0.0;
-            }else {
+            } else {
                 frete = 45.0;
             }
-        }return frete;
+        }
+        return frete;
     }
-    public Double getValorTotal(){
+
+    public Double getValorTotal() {
         Double total = 0.0;
-        for (ItemPedido itens: itemPedido) {
+        for (ItemPedido itens : itemPedido) {
             total += itens.getSubtotal();
         }
         return total + getFrete();

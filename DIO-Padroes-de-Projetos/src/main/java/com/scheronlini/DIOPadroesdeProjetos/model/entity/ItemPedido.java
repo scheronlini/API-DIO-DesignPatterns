@@ -14,6 +14,7 @@ public class ItemPedido {
     @ManyToOne
     private Produto produto;
     private Integer quantidade;
+    private Double preco;
     @ManyToOne
     @JoinColumn(name = "pedido_id")
     @JsonIgnore
@@ -22,11 +23,28 @@ public class ItemPedido {
     public ItemPedido() {
     }
 
-    public ItemPedido(Long id, Produto produto, int quantidade, Pedido pedido) {
+    public ItemPedido(Long id, Produto produto, int quantidade, Pedido pedido, Double preco) {
         this.id = id;
         this.produto = produto;
         this.quantidade = quantidade;
         this.pedido = pedido;
+        this.preco = preco;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
     }
 
     public Long getId() {
@@ -45,14 +63,6 @@ public class ItemPedido {
         this.produto = produto;
     }
 
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
     public Pedido getPedido() {
         return pedido;
     }
@@ -61,9 +71,10 @@ public class ItemPedido {
         this.pedido = pedido;
     }
 
-    public Double getSubtotal(){
+    public Double getSubtotal() {
         return quantidade * produto.getValor();
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

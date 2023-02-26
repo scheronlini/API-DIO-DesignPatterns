@@ -1,11 +1,7 @@
 package com.scheronlini.DIOPadroesdeProjetos.model.entity;
 
-import com.scheronlini.DIOPadroesdeProjetos.service.ViaCepService;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Transient;
 import java.util.Objects;
 
 @Entity
